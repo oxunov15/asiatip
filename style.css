@@ -1,89 +1,134 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0a0a0a;
-  color: #fff;
-  text-align: center;
+  background-color: #0d0d0d;
+  font-family: 'Poppins', sans-serif;
+  color: white;
 }
 
-header {
+/* === HEADER === */
+.main-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  justify-content: space-between;
   background-color: #000;
-  border-bottom: 2px solid #222;
+  padding: 15px 30px;
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo img {
+/* LOGO + TEXT */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
   height: 40px;
 }
 
-.lang-select select {
-  background: #111;
-  color: #fff;
-  border: 2px solid #444;
-  border-radius: 8px;
-  padding: 5px 10px;
-  font-size: 16px;
+.site-name {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #00ffc8;
+  text-shadow: 0 0 8px #00ffc875;
+}
+
+/* TIL SELECTOR */
+.language-selector {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.language-selector select {
+  background: transparent;
+  color: white;
+  border: 1px solid #444;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.language-selector select:hover {
+  border-color: #00ffc8;
+}
+
+/* PROFIL TUGMASI */
+.header-right {
+  display: flex;
+  align-items: center;
 }
 
 .profile-button {
-  background: linear-gradient(135deg, #ff6a00, #ffb300);
-  color: #fff;
+  background-color: #00ffc8;
+  color: #121212;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
   font-size: 1em;
-  height: 42px;
   cursor: pointer;
-  box-shadow: 0 0 12px rgba(255, 106, 0, 0.5), 0 0 24px rgba(255, 160, 0, 0.3);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 12px #00ffc880;
+  transition: background 0.2s ease;
 }
 
 .profile-button:hover {
-  background: linear-gradient(135deg, #ffaa00, #ffdd55);
-  box-shadow: 0 0 20px rgba(255, 200, 100, 0.7), 0 0 30px rgba(255, 150, 0, 0.5);
-  transform: translateY(-2px);
+  background-color: #00e6b8;
 }
 
-main {
-  padding: 40px 20px;
+/* === HERO === */
+.hero {
+  text-align: center;
+  padding: 100px 24px 80px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #00ffcc;
-  text-shadow: 0 0 10px #00ffcc;
+.hero h1 {
+  font-size: 3em;
+  color: #00ffc8;
+  text-shadow: 0 0 10px #00ffc880;
+  margin-bottom: 0.4em;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 18px;
-  background-color: #00ffcc;
-  color: #000;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.btn:hover {
-  background-color: #00e6b3;
+.hero p {
+  font-size: 1.2em;
+  color: #cccccc;
+  margin-bottom: 2em;
 }
 
-section h2 {
-  margin-top: 40px;
-  color: #fff;
-  text-shadow: 0 0 8px #ff0;
+.btn-primary {
+  background: #00ffc8;
+  color: #121212;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1em;
+  box-shadow: 0 0 16px #00ffc870;
+  transition: all 0.2s ease;
 }
 
-ul {
-  list-style: disc;
-  padding-left: 40px;
-  text-align: left;
-  margin: 20px auto;
-  max-width: 600px;
+.btn-primary:hover {
+  background: #00e6b8;
+  box-shadow: 0 0 24px #00ffc8aa;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .language-selector {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
 }
