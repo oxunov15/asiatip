@@ -1,46 +1,48 @@
 const translations = {
   uz: {
-    title: "Darhol Sovg'a oling",
-    desc: "Osiyodagi strimerlar va ijodkorlar uchun premium platforma",
+    title: "Darhol donation oling",
+    desc: "Streamer va yaratuvchilar uchun premium platforma",
     get_started: "Boshlash",
     features: "⚡ Xususiyatlar",
-    feature1: "Real-vaqtlik xabarnomalar"
+    feature1: "Real-time donation ogohlantirishlari"
   },
   ru: {
     title: "Начни получать донаты",
-    desc: "Премиальная платформа для стримеров и креаторов Азии",
+    desc: "Премиум-платформа для стримеров и креаторов",
     get_started: "Начать",
     features: "⚡ Возможности",
-    feature1: "Уведомления о пожертвованиях в реальном времени"
+    feature1: "Уведомления о донатах в реальном времени"
   },
   kg: {
-    title: "Дароо кеңеш алыңыз",
-    desc: "Азиядагы стримерлер үчүн премиум платформа",
+    title: "Дароо эле донаттарды алыңыз",
+    desc: "Стримерлер жана жаратуучулар үчүн премиум платформа",
     get_started: "Баштоо",
-    features: "⚡ Мүмкүнчүлүктөр",
-    feature1: "Реалдуу убакыт эскертмелери"
+    features: "⚡ Өзгөчөлүктөрү",
+    feature1: "Реалдуу убакыттагы донат эскертмелери"
   },
   kz: {
-    title: "Қазір кеңестерді алыңыз",
-    desc: "Азиядағы стримерлерге арналған премиум платформа",
+    title: "Қазірден бастап донаттар алыңыз",
+    desc: "Стримерлерге арналған премиум платформа",
     get_started: "Бастау",
-    features: "⚡ Мүмкіндіктер",
-    feature1: "Нақты уақыттағы хабарламалар"
+    features: "⚡ Ерекшеліктер",
+    feature1: "Нақты уақыттағы донат ескертулері"
   },
   tj: {
-    title: "Дарҳол маслиҳат гиред",
-    desc: "Платформаи премиум барои стримерҳо ва эҷодкорони Осиё",
+    title: "Фавран донат гиред",
+    desc: "Платформаи премиум барои стримерҳо ва эҷодкорон",
     get_started: "Оғоз кардан",
-    features: "⚡ Имконот",
-    feature1: "Огоҳиҳои вақти воқеӣ"
+    features: "⚡ Хусусиятҳо",
+    feature1: "Огоҳсозиҳои донат дар вақти воқеӣ"
   }
 };
 
-const langSwitcher = document.getElementById('langSwitcher');
-langSwitcher.addEventListener('change', () => {
-  const lang = langSwitcher.value;
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    const key = el.getAttribute('data-lang');
-    el.textContent = translations[lang][key];
+document.getElementById("langSwitcher").addEventListener("change", function () {
+  const lang = this.value;
+  const elements = document.querySelectorAll("[data-lang]");
+  elements.forEach(el => {
+    const key = el.getAttribute("data-lang");
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
   });
 });
